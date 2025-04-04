@@ -39,7 +39,7 @@
         /* Chatbot Container */
         #chatbot-container {
             width: 100%;
-            max-width: 800px; /* Increased width */
+            max-width: 800px;
             height: 85vh;
             background-color: var(--light-color);
             border-radius: 15px;
@@ -71,20 +71,17 @@
             fill: white;
         }
     
-    
-        /* Main Content Area (Chat + Features) */
         #main-content {
             display: flex;
             flex: 1;
-            overflow: hidden; /* Prevent internal scrollbars */
+            overflow: hidden;
         }
     
-        /* Chat Window Area */
          #chat-area {
-            flex: 3; /* Takes more space */
+            flex: 3;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid #e0e0e0; /* Separator */
+            border-right: 1px solid #e0e0e0;
          }
     
         #chat-window {
@@ -95,9 +92,8 @@
             scroll-behavior: smooth;
         }
     
-        /* Feature Panel */
         #feature-panel {
-            flex: 1; /* Takes less space */
+            flex: 1;
             padding: 20px;
             background-color: #f8f9fa;
             overflow-y: auto;
@@ -150,11 +146,11 @@
             margin-bottom: 15px;
             padding: 12px 18px;
             border-radius: 18px;
-            max-width: 80%; /* Slightly wider messages */
+            max-width: 80%;
             line-height: 1.5;
             word-wrap: break-word;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: relative; /* For timestamp */
+            position: relative;
         }
     
         .user-message {
@@ -171,13 +167,13 @@
             margin-right: auto;
             border-bottom-left-radius: 5px;
             text-align: left;
-            position: relative; /* For icon */
+            position: relative;
         }
     
-        .ai-message::before { /* Simple AI icon indicator */
+        .ai-message::before {
             content: '🤖';
             position: absolute;
-            left: -25px; /* Adjust as needed */
+            left: -25px; 
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.1em;
@@ -196,7 +192,7 @@
             color: #999;
             margin-top: 5px;
             display: block;
-            text-align: inherit; /* Inherit alignment from parent */
+            text-align: inherit;
         }
     
     
@@ -300,7 +296,7 @@
         @media (max-width: 768px) {
             body {
                 padding: 0;
-                align-items: stretch; /* Fill height */
+                align-items: stretch;
             }
             #chatbot-container {
                 height: 100vh;
@@ -309,19 +305,19 @@
                 box-shadow: none;
             }
             #main-content {
-                flex-direction: column; /* Stack vertically on small screens */
+                flex-direction: column; 
             }
             #chat-area {
                 border-right: none;
-                border-bottom: 1px solid #e0e0e0; /* Separator when stacked */
+                border-bottom: 1px solid #e0e0e0; 
             }
             #feature-panel {
-                 flex: 0 0 auto; /* Don't grow, fixed or content height */
-                 max-height: 30vh; /* Limit height */
+                 flex: 0 0 auto;
+                 max-height: 30vh; 
                  border-left: none;
             }
              .ai-message::before {
-                left: 5px; /* Adjust icon position */
+                left: 5px; 
                 font-size: 1em;
              }
             .message {
@@ -346,7 +342,6 @@
         <div id="main-content">
             <div id="chat-area">
                 <div id="chat-window">
-                    <!-- Chat messages will appear here -->
                     <div class="message ai-message">
                         <span class="message-sender">AI Planner</span>
                         Hello! I'm your AI Trip Planner. How can I help you plan your next adventure? Ask me about destinations, itineraries, packing lists, budget estimates, and more!
@@ -383,14 +378,14 @@
                     <h3>🗓️ Itinerary Notes</h3>
                     <p>Generated itinerary highlights might appear here.</p>
                     <ul>
-                        <!-- Dynamically added -->
+                     
                     </ul>
                 </div>
                 <div class="feature-section" id="packing-list">
                     <h3>🎒 Packing Helper</h3>
                     <p>Key packing items could be summarized here.</p>
                     <ul>
-                        <!-- Dynamically added -->
+                    
                     </ul>
                 </div>
                 <div class="feature-section" id="budget-tracker">
@@ -409,7 +404,7 @@
         const clearChatButton = document.getElementById('clear-chat-button');
         const quickPromptsContainer = document.getElementById('quick-prompts');
 
-        const GEMINI_API_KEY = "AIzaSyB-CvMCYHP4OuXoGspJcNxFbgzluZevBmU"; // Replace with your actual key
+        const GEMINI_API_KEY = "AIzaSyB-CvMCYHP4OuXoGspJcNxFbgzluZevBmU";
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
         let conversationHistory = [
